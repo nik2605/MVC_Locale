@@ -1,0 +1,67 @@
+﻿@model WebApplication3.Models.Address
+@using WebApplication3.Resources
+
+@{
+    var item = ViewData["Item"]?.ToString() ?? "Not Available";
+    var itemCode = ViewData["ItemCode"] != null ? ViewData["ItemCode"].ToString() : "Not Available";
+    var itemName = ViewData["ItemName"] != null ? ViewData["ItemName"].ToString() : "Not Available";
+}
+
+
+<div>
+    <h4>Profile</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Street)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Street)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Province)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Province)
+        </dd>
+
+    </dl>
+</div>
+
+<div>
+    <h4>Item</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @WebApplication3.Resources.Webapp.Item
+            Item
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => @item)
+        </dd>
+
+        <dt>
+            @WebApplication3.Resources.Webapp.ItemCode
+            Code
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => @itemCode)
+        </dd>
+
+        <dt>
+            @WebApplication3.Resources.Webapp.ItemName
+            Item Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => @itemName)
+        </dd>
+
+    </dl>
+</div>
+

@@ -1,0 +1,10 @@
+﻿@model WebApplication3.Models.UserModel
+
+
+@{
+    ViewBag.Title = "About";
+}
+
+<p> @ViewBag.Test </p>
+
+@Html.Partial("~/Views/Patrial/_PartialUserProfile.cshtml", @Model.Address)

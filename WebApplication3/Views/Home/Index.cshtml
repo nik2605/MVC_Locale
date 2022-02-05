@@ -1,0 +1,24 @@
+﻿@model WebApplication3.Models.UserModel
+@using WebApplication3.Helper
+
+
+@{
+    ViewBag.Title = "Home Page";
+    ViewBag.Test = "Website";
+    var date = DateTime.Now.ToString("yyyy MMMM dd", Helper.culture);
+}
+
+
+Name: @Model.GetFullName()
+<br />
+<br />
+
+
+Date: @date
+
+@Html.Partial("~/Views/Patrial/_PartialUserProfile.cshtml", @Model.Address, new ViewDataDictionary()
+{
+    new KeyValuePair<string, object>("Item", "Books"),
+    new KeyValuePair<string, object>("ItemCode", "AB568"),
+    new KeyValuePair<string, object>("ItemName", "Development"),
+})
